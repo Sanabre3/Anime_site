@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { Quote } from 'lucide-react'
 import { villains } from '../../data/content'
 import { THEME } from '../../lib/theme'
@@ -22,18 +21,14 @@ export default function VillainsSection() {
             const big = i === 0 || i === 1
             return (
               <Reveal key={v.id} delay={(i % 4) * 0.05} className={big ? 'sm:col-span-1 lg:col-span-2' : ''}>
-                <motion.article
-                  whileHover="hover"
-                  className="group relative h-full min-h-[300px] overflow-hidden rounded-2xl border border-white/10"
-                >
+                <article className="group relative h-full min-h-[300px] overflow-hidden rounded-2xl border border-white/10">
                   <div className="absolute inset-0">
                     <Poster theme={v.theme} kanji={v.kanji} img={v.img} className="transition-transform duration-700 group-hover:scale-105" />
                   </div>
                   {/* scrim para garantir legibilidade do nome */}
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/50 to-transparent" />
-                  <motion.div
-                    variants={{ hover: { opacity: 1 } }}
-                    className="absolute inset-0 opacity-0 transition-opacity duration-500"
+                  <div
+                    className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     style={{ background: `radial-gradient(80% 80% at 50% 20%, ${t.glow}, transparent 70%)` }}
                   />
                   <div className="relative flex h-full min-h-[300px] flex-col justify-end p-5">
@@ -44,18 +39,15 @@ export default function VillainsSection() {
                       {v.faction}
                     </span>
                     <h4 className="font-title text-2xl uppercase leading-none text-white sm:text-3xl">{v.name}</h4>
-                    <motion.div
-                      variants={{ hover: { height: 'auto', opacity: 1, marginTop: 12 } }}
-                      initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                      className="overflow-hidden"
-                    >
+                    {/* citação: sempre visível no touch, revelada no hover no desktop */}
+                    <div className="mt-3 max-h-40 overflow-hidden opacity-100 transition-all duration-500 lg:mt-0 lg:max-h-0 lg:opacity-0 lg:group-hover:mt-3 lg:group-hover:max-h-40 lg:group-hover:opacity-100">
                       <p className="flex gap-2 text-sm italic leading-snug text-white/70">
                         <Quote size={16} className="mt-0.5 shrink-0" style={{ color: t.color }} />
                         {v.quote}
                       </p>
-                    </motion.div>
+                    </div>
                   </div>
-                </motion.article>
+                </article>
               </Reveal>
             )
           })}

@@ -53,7 +53,7 @@ export default function CharactersSection() {
         <SectionHeading
           kicker="Almas em Batalha"
           title={<>Personagens</>}
-          desc="Os guerreiros que definem o destino dos três mundos. Passe o mouse para o efeito 3D e clique para conhecer cada história."
+          desc="Os guerreiros que definem o destino dos três mundos. Toque em um card para conhecer cada história."
         />
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">

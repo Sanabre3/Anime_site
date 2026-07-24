@@ -44,8 +44,8 @@ function CaptainCard({ c, i }: { c: Captain; i: number }) {
               {iconFor(c.element)} {c.element}
             </span>
           </div>
-          {/* detalhes revelados no hover */}
-          <div className="mt-3 max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:max-h-24 group-hover:opacity-100">
+          {/* detalhes: sempre visíveis no touch, revelados no hover no desktop */}
+          <div className="mt-3 max-h-24 overflow-hidden opacity-100 transition-all duration-500 lg:max-h-0 lg:opacity-0 lg:group-hover:max-h-24 lg:group-hover:opacity-100">
             <p className="text-[11px] text-white/45">Bankai</p>
             <p className="text-xs font-medium text-white/85">{c.bankai}</p>
             <div className="mt-2">

@@ -47,7 +47,7 @@ export default function Modal({ open, onClose, theme = 'spirit', children }: Mod
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
             transition={{ type: 'spring', stiffness: 260, damping: 26 }}
-            className="relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl glass-strong shadow-card"
+            className="no-scrollbar relative z-10 max-h-[90dvh] w-full max-w-3xl overflow-y-auto overflow-x-hidden overscroll-contain rounded-2xl glass-strong shadow-card"
             style={{ boxShadow: `0 30px 90px -20px #000, 0 0 60px -20px ${t.glow}` }}
           >
             {/* faíscas/partículas decorativas no topo */}
@@ -57,12 +57,12 @@ export default function Modal({ open, onClose, theme = 'spirit', children }: Mod
             />
             <button
               onClick={onClose}
-              className="absolute right-3 top-3 z-20 grid h-9 w-9 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
+              className="sticky right-3 top-3 z-20 ml-auto mr-3 mt-3 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-black/40 text-white backdrop-blur transition hover:bg-white/20"
               aria-label="Fechar"
             >
               <X size={18} />
             </button>
-            {children}
+            <div className="-mt-12">{children}</div>
           </motion.div>
         </motion.div>
       )}

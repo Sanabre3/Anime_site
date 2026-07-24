@@ -58,7 +58,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="font-title text-[clamp(3.4rem,11vw,9rem)] uppercase leading-[0.82] tracking-tight text-white">
+          <h1 className="font-title text-[clamp(2.8rem,11vw,9rem)] uppercase leading-[0.82] tracking-tight text-white">
             <span className="block title-stroke text-white/90">Entre na</span>
             <span className="block text-gradient-fire drop-shadow-[0_0_40px_rgba(255,122,24,0.35)]">
               Soul Society

@@ -15,7 +15,7 @@ function StatItem({ value, prefix, suffix, label, color, glow }: {
       />
       <span
         ref={ref}
-        className="relative block font-title text-5xl leading-none sm:text-6xl md:text-7xl"
+        className="relative block font-title text-4xl leading-none sm:text-6xl md:text-7xl"
         style={{ color, textShadow: `0 0 30px ${glow}` }}
       >
         {prefix}
@@ -33,7 +33,7 @@ export default function Stats() {
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_100%_at_50%_50%,rgba(255,122,24,0.06),transparent)]" />
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <Reveal>
-          <div className="grid grid-cols-2 gap-8 rounded-3xl glass-strong p-10 md:grid-cols-4 md:p-14">
+          <div className="grid grid-cols-2 gap-6 rounded-3xl glass-strong p-6 sm:gap-8 sm:p-10 md:grid-cols-4 md:p-14">
             {stats.map((s) => {
               const t = THEME[s.theme]
               return (

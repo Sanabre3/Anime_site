@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 text-xs text-white/35 sm:flex-row">
-          <p>© {2024} BLEACH · Soul Society. Projeto conceitual de fã.</p>
+          <p>© {2026} BLEACH · Soul Society. Projeto conceitual de fã.</p>
           <p className="flex items-center gap-2">
             Feito com <span className="text-blood">reiatsu</span> · React · Framer Motion · GSAP
           </p>
